@@ -1,8 +1,8 @@
 const Header = () => {
   return (
-    <>
-      <h1>hacker news</h1>
-    </>
+    <header className="bg-gray-800 text-white py-4 text-center">
+      <h1 className="text-3xl font-bold">Hacker News</h1>
+    </header>
   );
 };
 
