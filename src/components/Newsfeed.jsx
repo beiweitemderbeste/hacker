@@ -1,11 +1,16 @@
+import { useState } from "react";
+
 import SortingBar from "./SortingBar";
 import StoryList from "./StoryList";
 
 const Newsfeed = () => {
+
+  const [sorting, setSorting] = useState("top")
+
   return (
     <>
-      <SortingBar />
-      <StoryList />
+      <SortingBar sorting={sorting} setSorting={setSorting} />
+      <StoryList sorting={sorting} />
     </>
   );
 };
