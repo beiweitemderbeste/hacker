@@ -1,34 +1,32 @@
 import { useState, useEffect } from "react";
 
-import { fetchTop10TopStoryIDs } from "../utils/apiUtils";
-
 import Story from "./Story";
 
-const StoryList = () => {
+const StoryList = ({ sorting, fetchingFunction }) => {
   const [storyIDs, setStorIDs] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const top10StoryIDs = await fetchTop10TopStoryIDs();
-        setStorIDs(top10StoryIDs);
+        const stories = await fetchingFunction;
+        setStorIDs(stories);
       } catch (error) {
-        console.error("Error fetching top10 stories:", error);
+        console.error("Error fetching stories:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [fetchingFunction]);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <p className="text-xl font-bold mb-4">Hello from StoryList component</p>
-      <ul className="list-none m-0 p-0">
-        {storyIDs.map((storyID) => (
-          <Story key={storyID} storyID={storyID} />
-        ))}
-      </ul>
-    </div>
+    <div className="container mx-auto px-4 py-8 bg-gray-800">
+    <p className="text-xl font-bold mb-4 text-white">Top Ten {sorting.charAt(0).toUpperCase() + sorting.slice(1)} Stories</p>
+    <ul className="list-none m-0 p-0">
+      {storyIDs.map((storyID) => (
+        <Story key={storyID} storyID={storyID} />
+      ))}
+    </ul>
+  </div>
   );
 };
 

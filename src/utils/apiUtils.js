@@ -7,20 +7,72 @@ export const fetchTop10TopStoryIDs = async () => {
     const top10StoryIDs = data.slice(0, 10);
     return top10StoryIDs;
   } catch (error) {
-    console.error("Error fetching top10 story ids: ", error);
+    console.error("Error fetching top10 topstory ids: ", error);
   }
 };
 
-export const fetchTop100TopStoryIDs = async () => {
+export const fetchAllTopStoryIDs = async () => {
   try {
     const response = await fetch(
       "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"
     );
     const data = await response.json();
-    const top100StoryIDs = data.slice(0, 100);
-    return top100StoryIDs;
+    const allTopStoryIDs = data;
+    return allTopStoryIDs;
   } catch (error) {
-    console.error("Error fetching top100 stories: ", error);
+    console.error("Error fetchin all topstories: ", error);
+  }
+};
+
+export const fetchTop10BestStoryIDs = async () => {
+  try {
+    const response = await fetch(
+      "https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty"
+    );
+    const data = await response.json();
+    const top10StoryIDs = data.slice(0, 10);
+    return top10StoryIDs;
+  } catch (error) {
+    console.error("Error fetching top10 beststory ids: ", error);
+  }
+};
+
+export const fetchAllBestStoryIDs = async () => {
+  try {
+    const response = await fetch(
+      "https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty"
+    );
+    const data = await response.json();
+    const allBestStoryIDs = data;
+    return allBestStoryIDs;
+  } catch (error) {
+    console.error("Error fetchin all best stories: ", error);
+  }
+};
+
+export const fetchTop10NewStoryIDs = async () => {
+  try {
+    const response = await fetch(
+      "https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty"
+    );
+    const data = await response.json();
+    const top10StoryIDs = data.slice(0, 10);
+    return top10StoryIDs;
+  } catch (error) {
+    console.error("Error fetching top10 newstory ids: ", error);
+  }
+};
+
+export const fetchAllNewStoryIDs = async () => {
+  try {
+    const response = await fetch(
+      "https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty"
+    );
+    const data = await response.json();
+    const allNewStoryIDs = data;
+    return allNewStoryIDs;
+  } catch (error) {
+    console.error("Error fetchin all new stories: ", error);
   }
 };
 
