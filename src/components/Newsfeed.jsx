@@ -9,7 +9,9 @@ import StoryList from "./StoryList";
 
 const Newsfeed = () => {
   const [sorting, setSorting] = useState("top");
-  const [fetchingFunction, setFetchingFunction] = useState(() => fetchTop10TopStoryIDs());
+  const [fetchingFunction, setFetchingFunction] = useState(() =>
+    fetchTop10TopStoryIDs()
+  );
 
   useEffect(() => {
     if (sorting === "new") {

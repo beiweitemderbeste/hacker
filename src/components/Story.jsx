@@ -25,11 +25,20 @@ const Story = ({ storyID }) => {
           <ul className="list-disc pl-4">
             <li className="text-white">Story ID: {storyID}</li>
             <li className="text-white">Story by: {story.by}</li>
-            <li className="text-white">Story descendants: {story.descendants}</li>
+            <li className="text-white">
+              Story descendants: {story.descendants}
+            </li>
             <li className="text-white">Score: {story.score}</li>
             <li className="text-white">Time: {story.time}</li>
             <li className="text-white">Type: {story.type}</li>
-            <li className="text-white">URL: {story.url && <a href={story.url} className="text-blue-300">{story.url}</a>}</li>
+            <li className="text-white">
+              URL:
+              {story.url && (
+                <a href={story.url} className="text-blue-300">
+                  {story.url}
+                </a>
+              )}
+            </li>
           </ul>
         </>
       ) : (
