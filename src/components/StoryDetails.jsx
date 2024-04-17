@@ -1,3 +1,5 @@
+import Comment from "./Comment";
+
 const StoryDetails = ({ showStoryDetails, setShowStoryDetails }) => {
   console.log(showStoryDetails);
   return (
@@ -19,6 +21,9 @@ const StoryDetails = ({ showStoryDetails, setShowStoryDetails }) => {
       <p className="text-gray-500 mb-2">Type: {showStoryDetails.type}</p>
       <p className="text-gray-500 mb-2">URL: {showStoryDetails.url}</p>
       <p className="text-gray-500 mb-2">kids: {showStoryDetails.kids}</p>
+      {showStoryDetails.kids.map(kid => (
+        <Comment key={kid} kid={kid}  />
+      ))}
     </div>
   );
 };
