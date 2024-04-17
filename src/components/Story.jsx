@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { fetchSingleStory } from "../utils/apiUtils";
 
-const Story = ({ storyID }) => {
+const Story = ({ storyID, setShowStoryDetails }) => {
   const [story, setStory] = useState(null);
 
   useEffect(() => {
@@ -18,7 +18,10 @@ const Story = ({ storyID }) => {
   }, [storyID]);
 
   return (
-    <div className="border border-gray-700 rounded-md p-4 mb-4">
+    <div
+      onClick={() => setShowStoryDetails(story)}
+      className="border border-gray-700 rounded-md p-4 mb-4"
+    >
       {story ? (
         <>
           <h2 className="text-xl font-bold mb-2 text-white">{story.title}</h2>

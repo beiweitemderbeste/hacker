@@ -6,12 +6,14 @@ import { fetchTop10NewStoryIDs } from "../utils/apiUtils";
 
 import SortingBar from "./SortingBar";
 import StoryList from "./StoryList";
+import StoryDetails from "./StoryDetails";
 
 const Newsfeed = () => {
   const [sorting, setSorting] = useState("top");
   const [fetchingFunction, setFetchingFunction] = useState(() =>
     fetchTop10TopStoryIDs()
   );
+  const [showStoryDetails, setShowStoryDetails] = useState(false);
 
   useEffect(() => {
     if (sorting === "new") {
@@ -23,10 +25,25 @@ const Newsfeed = () => {
     }
   }, [sorting]);
 
+  if (showStoryDetails) {
+    return (
+      <>
+        <StoryDetails
+          showStoryDetails={showStoryDetails}
+          setShowStoryDetails={setShowStoryDetails}
+        />
+      </>
+    );
+  }
+
   return (
     <>
       <SortingBar setSorting={setSorting} />
-      <StoryList sorting={sorting} fetchingFunction={fetchingFunction} />
+      <StoryList
+        sorting={sorting}
+        fetchingFunction={fetchingFunction}
+        setShowStoryDetails={setShowStoryDetails}
+      />
     </>
   );
 };

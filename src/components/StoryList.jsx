@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import Story from "./Story";
 
-const StoryList = ({ sorting, fetchingFunction }) => {
+const StoryList = ({ sorting, fetchingFunction, setShowStoryDetails }) => {
   const [storyIDs, setStorIDs] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,11 @@ const StoryList = ({ sorting, fetchingFunction }) => {
       </p>
       <ul className="list-none m-0 p-0">
         {storyIDs.map((storyID) => (
-          <Story key={storyID} storyID={storyID} />
+          <Story
+            key={storyID}
+            storyID={storyID}
+            setShowStoryDetails={setShowStoryDetails}
+          />
         ))}
       </ul>
     </div>
