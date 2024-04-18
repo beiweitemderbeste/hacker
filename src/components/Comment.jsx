@@ -1,3 +1,5 @@
+// import fetching comment
+
 const Comment = ({ kid }) => {
   return (
     <>
