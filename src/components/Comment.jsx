@@ -24,10 +24,12 @@ const Comment = ({ commentID }) => {
           <ul className="list-disc pl-4">
             <li className="text-gray-300">Comment ID: {comment.id}</li>
             <li className="text-gray-300">Comment by: {comment.by}</li>
-            <li className="text-gray-300">Kids: {comment.kids}</li>
             <li className="text-gray-300">Text: {comment.text}</li>
             <li className="text-gray-300">Time: {comment.time}</li>
             <li className="text-gray-300">Type: {comment.type}</li>
+            { comment.kids &&
+              comment.kids.map((kid) => (<Comment key={kid} commentID={kid} />)
+            )}
           </ul>
         </>
       ) : (
