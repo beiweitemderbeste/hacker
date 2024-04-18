@@ -1,10 +1,39 @@
-// import fetching comment
+import { useState, useEffect } from "react";
 
-const Comment = ({ kid }) => {
+import { fetchSingleComment } from "../utils/apiUtils";
+
+const Comment = ({ commentID }) => {
+  const [comment, setComment] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const singleComment = await fetchSingleComment(commentID);
+        setComment(singleComment);
+      } catch (error) {
+        console.error("Error fetching single story: ", error);
+      }
+    };
+    fetchData();
+  }, [commentID]);
+
   return (
-    <>
-      <h1>hello from {kid}</h1>
-    </>
+    <div>
+      {comment ? (
+        <>
+          <ul className="list-disc pl-4">
+            <li className="text-white">comment ID: {comment.id}</li>
+            <li className="text-white">comment by: {comment.by}</li>
+            <li className="text-white">kids: {comment.kids}</li>
+            <li className="text-white">text: {comment.text}</li>
+            <li className="text-white">Time: {comment.time}</li>
+            <li className="text-white">Type: {comment.type}</li>
+          </ul>
+        </>
+      ) : (
+        <p className="text-gray-400">Loading...</p>
+      )}
+    </div>
   );
 };
 
