@@ -10,3 +10,4 @@ todos:
 - add toggle for dark/light mode
 - add toggle for story list layout
 - add top of page-button
+- add profile component and implement links to it

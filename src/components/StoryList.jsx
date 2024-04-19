@@ -21,7 +21,7 @@ const StoryList = ({ sorting, fetchingFunction, setShowStoryDetails }) => {
   return (
     <div className="container mx-auto px-4 py-8 bg-gray-800">
       <p className="text-xl font-bold mb-4 text-white">
-        Top Ten {sorting.charAt(0).toUpperCase() + sorting.slice(1)} Stories
+        Top Ten {sorting} Stories
       </p>
       <ul className="list-none m-0 p-0">
         {storyIDs.map((storyID) => (
