@@ -25,23 +25,16 @@ const Newsfeed = () => {
     }
   }, [sorting]);
 
-  if (showStoryDetails) {
-    return (
-      <>
-        <StoryDetails
-          showStoryDetails={showStoryDetails}
-          setShowStoryDetails={setShowStoryDetails}
-        />
-      </>
-    );
-  }
-
   return (
     <>
       <SortingBar setSorting={setSorting} />
       <StoryList
         sorting={sorting}
         fetchingFunction={fetchingFunction}
+        setShowStoryDetails={setShowStoryDetails}
+      />
+      <StoryDetails
+        showStoryDetails={showStoryDetails}
         setShowStoryDetails={setShowStoryDetails}
       />
     </>
