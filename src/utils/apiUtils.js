@@ -104,3 +104,8 @@ export const convertUnixTime = (timestamp) => {
   const date = timestamp;
   return date;
 };
+
+export const shortURL = (link) => {
+  const url = new URL(link);
+  return url.hostname;
+};
