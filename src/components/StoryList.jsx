@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import Story from "./Story";
 
-const StoryList = ({ sorting, fetchingFunction, setShowStoryDetails }) => {
+const StoryList = ({ fetchingFunction, setShowStoryDetails }) => {
   const [storyIDs, setStorIDs] = useState([]);
 
   useEffect(() => {
@@ -19,10 +19,7 @@ const StoryList = ({ sorting, fetchingFunction, setShowStoryDetails }) => {
   }, [fetchingFunction]);
 
   return (
-    <div className="container mx-auto px-4 py-8 bg-gray-800">
-      <p className="text-xl font-bold mb-4 text-white">
-        Top Ten {sorting} Stories
-      </p>
+    <div className="container mx-auto bg-gray-900">
       <ul className="list-none m-0 p-0">
         {storyIDs.map((storyID) => (
           <Story

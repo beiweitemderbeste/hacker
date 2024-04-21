@@ -24,7 +24,7 @@ const Story = ({ storyID, setShowStoryDetails }) => {
   return (
     <div
       onClick={() => setShowStoryDetails(story)}
-      className="border border-gray-700 rounded-md p-4 mb-4"
+      className="border-b border-gray-700 p-4"
     >
       {story ? (
         <>

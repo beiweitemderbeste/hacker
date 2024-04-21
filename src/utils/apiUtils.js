@@ -90,10 +90,17 @@ export const fetchSingleStory = async (storyID) => {
 
 export const fetchSingleComment = async (commentID) => {
   try {
-    const response = await fetch (`https://hacker-news.firebaseio.com/v0/item/${commentID}.json?print=pretty`)
+    const response = await fetch(
+      `https://hacker-news.firebaseio.com/v0/item/${commentID}.json?print=pretty`
+    );
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error fetching single comment: ", error)
+    console.error("Error fetching single comment: ", error);
   }
-}
+};
+
+export const convertUnixTime = (timestamp) => {
+  const date = timestamp;
+  return date;
+};
