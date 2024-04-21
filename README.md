@@ -15,3 +15,4 @@ todos:
 - add top of page-button
 - add profile component and implement links to it
 - add favicon
+- show correct number of comments
