@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 
 import { fetchSingleComment } from "../utils/apiUtils";
 
+import CommentHeader from "./CommentHeader";
+import CommentBody from "./CommentBody";
+
 const Comment = ({ commentID }) => {
   const [comment, setComment] = useState();
 
@@ -18,19 +21,13 @@ const Comment = ({ commentID }) => {
   }, [commentID]);
 
   return (
-    <div className="border border-gray-700 bg-gray-800 rounded-md p-4 mb-4">
+    <div className="p-4 mb-4">
       {comment ? (
         <>
-          <ul className="list-disc pl-4">
-            <li className="text-gray-300">Comment ID: {comment.id}</li>
-            <li className="text-gray-300">Comment by: {comment.by}</li>
-            <li className="text-gray-300">Text: {comment.text}</li>
-            <li className="text-gray-300">Time: {comment.time}</li>
-            <li className="text-gray-300">Type: {comment.type}</li>
-            { comment.kids &&
-              comment.kids.map((kid) => (<Comment key={kid} commentID={kid} />)
-            )}
-          </ul>
+          <CommentHeader comment={comment} />
+          <CommentBody comment={comment} />
+          {comment.kids &&
+            comment.kids.map((kid) => <Comment key={kid} commentID={kid} />)}
         </>
       ) : (
         <p className="text-gray-400">Loading...</p>
