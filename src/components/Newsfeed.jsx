@@ -27,7 +27,7 @@ const Newsfeed = () => {
 
   return (
     <>
-      <SortingBar setSorting={setSorting} />
+      <SortingBar sorting={sorting} setSorting={setSorting} />
       <StoryList
         fetchingFunction={fetchingFunction}
         setShowStoryDetails={setShowStoryDetails}

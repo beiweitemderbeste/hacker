@@ -2,8 +2,8 @@ import { useState } from "react";
 
 import DropDownModal from "./DropDownModal";
 
-const DropDownMenu = () => {
-  const [open, setOpen] = useState(true);
+const DropDownMenu = ({ sorting, setSorting }) => {
+  const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -11,8 +11,8 @@ const DropDownMenu = () => {
 
   return (
     <div>
-      <button onClick={toggleMenu}>new stories ↓</button>
-      {open && <DropDownModal />}
+      <button onClick={toggleMenu}>{sorting} stories ↓</button>
+      {open && <DropDownModal setSorting={setSorting} setOpen={setOpen} />}
     </div>
   );
 };
