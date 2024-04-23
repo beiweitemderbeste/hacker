@@ -10,7 +10,7 @@ const DropDownMenu = ({ sorting, setSorting }) => {
   };
 
   return (
-    <div>
+    <div className="p-3 px-6">
       <button onClick={toggleMenu}>{sorting} stories ↓</button>
       {open && <DropDownModal setSorting={setSorting} setOpen={setOpen} />}
     </div>

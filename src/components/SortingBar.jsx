@@ -2,9 +2,9 @@ import DropDownMenu from "./DropDownMenu";
 
 const SortingBar = ({ sorting, setSorting }) => {
   return (
-    <>
+    <div className="bg-gray-800 text-white">
       <DropDownMenu sorting={sorting} setSorting={setSorting} />
-    </>
+    </div>
   );
 };
 
