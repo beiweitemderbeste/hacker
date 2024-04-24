@@ -7,6 +7,7 @@ import { fetchTop10NewStoryIDs } from "../utils/apiUtils";
 import SortingBar from "./SortingBar";
 import StoryList from "./StoryList";
 import StoryDetails from "./StoryDetails";
+import BackToTopButton from "./BackToTopButton";
 
 const Newsfeed = () => {
   const [sorting, setSorting] = useState("top");
@@ -36,6 +37,7 @@ const Newsfeed = () => {
         showStoryDetails={showStoryDetails}
         setShowStoryDetails={setShowStoryDetails}
       />
+      <BackToTopButton />
     </>
   );
 };
