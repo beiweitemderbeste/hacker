@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Story from "./Story";
+import BackToTopButton from "./BackToTopButton";
 
 const StoryList = ({ fetchingFunction, setShowStoryDetails }) => {
   const [storyIDs, setStorIDs] = useState([]);
@@ -29,6 +30,7 @@ const StoryList = ({ fetchingFunction, setShowStoryDetails }) => {
           />
         ))}
       </ul>
+      <BackToTopButton />
     </div>
   );
 };
