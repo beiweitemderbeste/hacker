@@ -5,9 +5,9 @@ const BackToTopButton = () => {
 
   useEffect(() => {
     const checkScrollHeight = () => {
-      if (!showButton && window.scrollY > 400) {
+      if (!showButton && window.scrollY > 800) {
         setShowButton(true);
-      } else if (showButton && window.scrollY <= 400) {
+      } else if (showButton && window.scrollY <= 800) {
         setShowButton(false);
       }
     };
@@ -23,8 +23,13 @@ const BackToTopButton = () => {
   };
 
   return (
-    <div>
-      <button onClick={scrollToTop} className="fixed bg-red-600 bottom-4 right-4 z-40">back to top</button>
+    <div className={showButton ? "visible" : "hidden"}>
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-4 right-4 z-40 px-4 py-2 rounded-lg shadow-md bg-gray-800 text-gray-200"
+      >
+        back to top
+      </button>
     </div>
   );
 };
