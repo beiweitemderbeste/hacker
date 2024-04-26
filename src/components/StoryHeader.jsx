@@ -1,4 +1,4 @@
-import { convertUnixTime, shortURL } from "../utils/apiUtils";
+import { convertUnixTime, shortURL } from "../utils/utils";
 
 const StoryHeader = ({ story }) => {
   const time = convertUnixTime(story.time);

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-import { fetchTop10BestStoryIDs } from "../utils/apiUtils";
-import { fetchTop10TopStoryIDs } from "../utils/apiUtils";
-import { fetchTop10NewStoryIDs } from "../utils/apiUtils";
+import { fetchTop10BestStoryIDs } from "../utils/utils";
+import { fetchTop10TopStoryIDs } from "../utils/utils";
+import { fetchTop10NewStoryIDs } from "../utils/utils";
 
 import SortingBar from "./SortingBar";
 import StoryList from "./StoryList";

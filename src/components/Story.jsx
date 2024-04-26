@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { fetchSingleStory } from "../utils/apiUtils";
+import { fetchSingleStory } from "../utils/utils";
 
 import StoryHeader from "./StoryHeader";
 import StoryBody from "./StoryBody";
