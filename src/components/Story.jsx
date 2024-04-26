@@ -22,7 +22,7 @@ const Story = ({ storyID, setShowStoryDetails }) => {
   }, [storyID]);
 
   return (
-    <div
+    <li
       onClick={() => setShowStoryDetails(story)}
       className="border-b border-gray-700 p-4"
     >
@@ -35,7 +35,7 @@ const Story = ({ storyID, setShowStoryDetails }) => {
       ) : (
         <p className="text-gray-400">Loading...</p>
       )}
-    </div>
+    </li>
   );
 };
 

@@ -22,7 +22,7 @@ const Comment = ({ commentID }) => {
   }, [commentID]);
 
   return (
-    <div className="p-4 mb-4">
+    <li className="p-4 mb-4">
       {comment ? (
         <>
           <CommentHeader comment={comment} />
@@ -32,7 +32,7 @@ const Comment = ({ commentID }) => {
       ) : (
         <p className="text-gray-400">Loading...</p>
       )}
-    </div>
+    </li>
   );
 };
 
