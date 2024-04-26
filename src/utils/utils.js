@@ -109,3 +109,9 @@ export const shortURL = (link) => {
   const url = new URL(link);
   return url.hostname;
 };
+
+export const decodeHTMLEntities = (html) => {
+  const textarea = document.createElement('textarea');
+  textarea.innerHTML = html;
+  return textarea.value;
+};
