@@ -6,11 +6,12 @@ todos:
 [x] write function to shorten url
 [x] style single story
 [x] style comments
-[ ] add dropdown menu to sorting bar
-[ ] add back to top of page-button
+[x] add dropdown menu to sorting bar
+[x] add back to top of page-button
+[ ] decode comments
 [ ] write function to load more items based on the sorting status
 [ ] write function to convert the time
-[ ]change header based on choice of stories
+[ ] change header based on choice of stories
 [ ] add typescript
 [ ] add toggle for dark/light mode
 [ ] add toggle for story list layout
