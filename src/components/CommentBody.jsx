@@ -1,6 +1,6 @@
 const CommentBody = ({ comment }) => {
   return (
-    <div className="max-w-prose">
+    <div className="max-w-prose text-white px-4">
       <p>{comment.text}</p>
     </div>
   );
