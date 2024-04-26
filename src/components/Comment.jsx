@@ -4,6 +4,7 @@ import { fetchSingleComment } from "../utils/apiUtils";
 
 import CommentHeader from "./CommentHeader";
 import CommentBody from "./CommentBody";
+import CommentList from "./CommentList";
 
 const Comment = ({ commentID }) => {
   const [comment, setComment] = useState();
@@ -26,8 +27,7 @@ const Comment = ({ commentID }) => {
         <>
           <CommentHeader comment={comment} />
           <CommentBody comment={comment} />
-          {comment.kids &&
-            comment.kids.map((kid) => <Comment key={kid} commentID={kid} />)}
+          {comment.kids && <CommentList commentIDs={comment.kids} />}
         </>
       ) : (
         <p className="text-gray-400">Loading...</p>
