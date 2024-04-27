@@ -111,7 +111,7 @@ export const shortURL = (link) => {
 };
 
 export const decodeHTMLEntities = (html) => {
-  const textarea = document.createElement('textarea');
+  const textarea = document.createElement("textarea");
   textarea.innerHTML = html;
   return textarea.value;
 };
