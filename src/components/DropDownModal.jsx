@@ -1,5 +1,5 @@
 import DropDownModalHeader from "./DropDownModalHeader.tsx";
-import DropDownModalButton from "./DropDownModalButton";
+import DropDownModalButton from "./DropDownModalButton.tsx";
 
 const DropDownModal = ({ setSorting, setOpen }) => {
   return (

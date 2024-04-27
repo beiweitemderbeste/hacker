@@ -1,4 +1,8 @@
-const DropDownModalButton = ({ setSorting, setOpen }) => {
+import React from "react";
+
+import { DropDownModalButtonProps } from "../interfaces/DropDownModalButtonProps";
+
+const DropDownModalButton: React.FC<DropDownModalButtonProps> = ({ setSorting, setOpen }) => {
   return (
     <div className="flex flex-col">
       <button
