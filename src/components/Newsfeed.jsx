@@ -4,7 +4,7 @@ import { fetchTop10BestStoryIDs } from "../utils/utils";
 import { fetchTop10TopStoryIDs } from "../utils/utils";
 import { fetchTop10NewStoryIDs } from "../utils/utils";
 
-import SortingBar from "./SortingBar";
+import SortingBar from "./SortingBar.tsx";
 import StoryList from "./stories/StoryList"
 import StoryDetails from "./stories/StoryDetails";
 

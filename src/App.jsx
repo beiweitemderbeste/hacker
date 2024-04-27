@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+import Header from "./components/Header.tsx";
 import Newsfeed from "./components/Newsfeed";
 
 const App = () => {
