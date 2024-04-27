@@ -1,3 +1,3 @@
 export interface CommentListProps {
-  commentID: number;
+  commentIDs: number[];
 }
