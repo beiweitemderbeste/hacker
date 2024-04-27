@@ -13,7 +13,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ sorting, setSorting }) => {
 
   return (
     <div className="p-3 px-6">
-      <button onClick={toggleMenu}>{sorting} stories ↓</button>
+      <button onClick={toggleMenu} className="text-white">{sorting} stories ↓</button>
       {open && <DropDownModal setSorting={setSorting} setOpen={setOpen} />}
     </div>
   );
