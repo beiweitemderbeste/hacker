@@ -1,8 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import DropDownModal from "./DropDownModal";
 
-const DropDownMenu = ({ sorting, setSorting }) => {
+import { DropDownMenuProps } from "../../interfaces/dropdown/DropDownMenuProps"
+
+const DropDownMenu: React.FC<DropDownMenuProps> = ({ sorting, setSorting }) => {
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
