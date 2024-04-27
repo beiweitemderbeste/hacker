@@ -9,8 +9,9 @@ todos:
 - [x] add dropdown menu to sorting bar
 - [x] add back to top of page-button
 - [x] decode comments
+- [x] sort components
 - [ ] add typescript
-- [ ] sort components
+- [ ] refactor dropdown modal into smaller components
 - [ ] write function to load more items based on the sorting status
 - [ ] write function to convert the time
 - [ ] change header based on choice of stories
