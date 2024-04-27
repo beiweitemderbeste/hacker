@@ -1,8 +1,8 @@
 import React from "react";
 
-import { CommentProps } from "../../interfaces/comments/CommentProps";
+import { CommentHeaderProps } from "../../interfaces/comments/CommentHeaderProps";
 
-const CommentHeader: React.FC<CommentProps> = ({ comment }) => {
+const CommentHeader: React.FC<CommentHeaderProps> = ({ comment }) => {
   return (
     <div className="flex px-4">
       <p className="text-gray-400 font-medium mr-2">{comment.by}</p>

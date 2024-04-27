@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-import { fetchSingleComment } from "../../utils/utils";
+import { fetchSingleComment } from "../../utils/utils.js";
 
 import CommentHeader from "./CommentHeader";
 import CommentBody from "./CommentBody";
 import CommentList from "./CommentList";
 
-const Comment = ({ commentID }) => {
+import { CommentProps } from "../../interfaces/comments/CommentProps"
+
+const Comment: React.FC<CommentProps> = ({ commentID }) => {
   const [comment, setComment] = useState();
 
   useEffect(() => {
