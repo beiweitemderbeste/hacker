@@ -1,4 +1,4 @@
-import CommentList from "./CommentList";
+import CommentList from "../comments/CommentList";
 import StoryHeader from "./StoryHeader";
 import StoryBody from "./StoryBody";
 import StoryFooter from "./StoryFooter";

@@ -1,4 +1,4 @@
-import DropDownMenu from "./DropDownMenu";
+import DropDownMenu from "./dropdown/DropDownMenu";
 
 const SortingBar = ({ sorting, setSorting }) => {
   return (

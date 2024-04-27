@@ -5,8 +5,8 @@ import { fetchTop10TopStoryIDs } from "../utils/utils";
 import { fetchTop10NewStoryIDs } from "../utils/utils";
 
 import SortingBar from "./SortingBar";
-import StoryList from "./StoryList";
-import StoryDetails from "./StoryDetails";
+import StoryList from "./stories/StoryList"
+import StoryDetails from "./stories/StoryDetails";
 
 const Newsfeed = () => {
   const [sorting, setSorting] = useState("top");
