@@ -1,7 +1,7 @@
 import React from "react";
 
-import DropDownModalHeader from "./DropDownModalHeader.js";
-import DropDownModalBody from "./DropDownModalBody.js"
+import DropDownModalHeader from "./DropDownModalHeader";
+import DropDownModalBody from "./DropDownModalBody"
 
 import { DropDownModalProps } from "../../interfaces/dropdown/DropDownModalProps.js";
 
