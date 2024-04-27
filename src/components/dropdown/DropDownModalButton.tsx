@@ -1,6 +1,6 @@
 import React from "react";
 
-import { DropDownModalButtonProps } from "../../interfaces/DropDownModalButtonProps";
+import { DropDownModalButtonProps } from "../../interfaces/dropdown/DropDownModalButtonProps";
 
 const DropDownModalButton: React.FC<DropDownModalButtonProps> = ({ setSorting, setOpen }) => {
   return (
