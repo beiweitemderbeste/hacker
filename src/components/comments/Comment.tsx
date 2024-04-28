@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-import { fetchSingleComment } from "../../utils/utils.js";
+import { fetchSingleComment } from "../../utils/utils";
 
 import CommentHeader from "./CommentHeader";
 import CommentBody from "./CommentBody";
 import CommentList from "./CommentList";
 
-import { CommentProps } from "../../interfaces/comments/CommentProps"
+import { Comment, CommentID } from "../../types/Comment.interfaces";
 
-const Comment: React.FC<CommentProps> = ({ commentID }) => {
-  const [comment, setComment] = useState();
+const Comment: React.FC<CommentID> = ({ commentID }) => {
+  const [comment, setComment] = useState<Comment | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {

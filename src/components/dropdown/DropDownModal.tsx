@@ -3,7 +3,7 @@ import React from "react";
 import DropDownModalHeader from "./DropDownModalHeader";
 import DropDownModalBody from "./DropDownModalBody"
 
-import { DropDownModalProps } from "../../interfaces/dropdown/DropDownModalProps.js";
+import { DropDownModalProps } from "../../types/Dropdown.interfaces";
 
 const DropDownModal: React.FC<DropDownModalProps> = ({ setSorting, setOpen }) => {
   return (
