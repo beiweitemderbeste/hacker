@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { fetchSingleComment } from "../utils/utils";
+import { fetchSingleComment } from "../../utils/utils";
 
 import CommentHeader from "./CommentHeader";
 import CommentBody from "./CommentBody";

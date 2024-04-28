@@ -1,4 +1,4 @@
-import { decodeHTMLEntities } from "../utils/utils";
+import { decodeHTMLEntities } from "../../utils/utils";
 
 const CommentBody = ({ comment }) => {
   return (
