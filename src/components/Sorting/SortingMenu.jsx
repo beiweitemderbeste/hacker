@@ -2,17 +2,17 @@ import { useState } from "react";
 
 import SortingModal from "./SortingModal";
 
-const SortingMenu = ({ sorting, setSorting }) => {
-  const [open, setOpen] = useState(false);
+const SortingMenu = ({ sortingSelection, setSortingSelection }) => {
+  const [openSortingModal, setOpenSortingModal] = useState(false);
 
   const toggleMenu = () => {
-    setOpen(!open);
+    setOpenSortingModal(!openSortingModal);
   };
 
   return (
     <div className="p-3 px-6">
-      <button onClick={toggleMenu} className="text-white">{sorting} stories ↓</button>
-      {open && <SortingModal setSorting={setSorting} setOpen={setOpen} />}
+      <button onClick={toggleMenu} className="text-white">{sortingSelection} stories ↓</button>
+      {open && <SortingModal setSortingSelection={setSortingSelection} setOpenSortingModal={setOpenSortingModal} />}
     </div>
   );
 };

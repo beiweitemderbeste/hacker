@@ -9,25 +9,25 @@ import StoryList from "./Story/StoryList";
 import StoryDetails from "./Story/StoryDetails";
 
 const Newsfeed = () => {
-  const [sorting, setSorting] = useState("top");
+  const [sortingSelection, setSortingSelection] = useState("top");
   const [fetchingFunction, setFetchingFunction] = useState(() =>
     fetchTop10TopStoryIDs()
   );
   const [showStoryDetails, setShowStoryDetails] = useState(false);
 
   useEffect(() => {
-    if (sorting === "new") {
+    if (sortingSelection === "new") {
       setFetchingFunction(() => fetchTop10NewStoryIDs());
-    } else if (sorting === "best") {
+    } else if (sortingSelection === "best") {
       setFetchingFunction(() => fetchTop10BestStoryIDs());
     } else {
       setFetchingFunction(() => fetchTop10TopStoryIDs());
     }
-  }, [sorting]);
+  }, [sortingSelection]);
 
   return (
     <>
-      <Navigation sorting={sorting} setSorting={setSorting} />
+      <Navigation sortingSelection={sortingSelection} setSortingSelection={setSortingSelection} />
       <StoryList
         fetchingFunction={fetchingFunction}
         setShowStoryDetails={setShowStoryDetails}

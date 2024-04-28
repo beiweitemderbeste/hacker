@@ -1,11 +1,11 @@
-const SortingModalButton = ({ setSorting, setOpen }) => {
+const SortingModalButton = ({ setSortingSelection, setOpenSortingModal }) => {
   return (
     <div className="flex flex-col">
       <button
         className="text-gray-400 text-lg px-6 py-4 w-full text-left"
         onClick={() => {
-          setSorting("new");
-          setOpen(false);
+          setSortingSelection("new");
+          setOpenSortingModal(false);
         }}
       >
         new
@@ -13,8 +13,8 @@ const SortingModalButton = ({ setSorting, setOpen }) => {
       <button
         className="text-gray-400 text-lg px-6 py-4 w-full text-left"
         onClick={() => {
-          setSorting("top");
-          setOpen(false);
+          setSortingSelection("top");
+          setOpenSortingModal(false);
         }}
       >
         top
@@ -22,8 +22,8 @@ const SortingModalButton = ({ setSorting, setOpen }) => {
       <button
         className="text-gray-400 text-lg px-6 py-4 w-full text-left"
         onClick={() => {
-          setSorting("best");
-          setOpen(false);
+          setSortingSelection("best");
+          setOpenSortingModal(false);
         }}
       >
         best

@@ -1,9 +1,9 @@
 import SortingMenu from "./Sorting/SortingMenu";
 
-const Navigation = ({ sorting, setSorting }) => {
+const Navigation = ({ sortingSelection, setSortingSelection }) => {
   return (
     <nav className="bg-gray-800">
-      <SortingMenu sorting={sorting} setSorting={setSorting} />
+      <SortingMenu sortingSelection={sortingSelection} setSortingSelection={setSortingSelection} />
     </nav>
   );
 };
