@@ -1,4 +1,4 @@
-const DropDownModalButton = ({ setSorting, setOpen }) => {
+const SortingModalButton = ({ setSorting, setOpen }) => {
   return (
     <div className="flex flex-col">
       <button
@@ -32,4 +32,4 @@ const DropDownModalButton = ({ setSorting, setOpen }) => {
   );
 };
 
-export default DropDownModalButton;
+export default SortingModalButton;
