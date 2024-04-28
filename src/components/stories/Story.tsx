@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { fetchSingleStory } from "../../utils/utils";
 
@@ -6,7 +6,9 @@ import StoryHeader from "./StoryHeader";
 import StoryBody from "./StoryBody";
 import StoryFooter from "./StoryFooter";
 
-const Story = ({ storyID, setShowStoryDetails }) => {
+import { StoryProps } from "../../types/Story.interfaces";
+
+const Story: React.FC<StoryProps> = ({ storyID, setShowStoryDetails }) => {
   const [story, setStory] = useState(null);
 
   useEffect(() => {

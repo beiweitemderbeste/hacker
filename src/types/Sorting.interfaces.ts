@@ -1,4 +1,8 @@
-export interface SortingProps {
+export interface SortingOptions {
   sorting: "top" | "best" | "new";
-  setSorting: (sorting: "top" | "best" | "new") => void;
+}
+
+export interface SortingProps {
+  sorting: SortingOptions;
+  setSorting: (sorting: SortingOptions) => void;
 }

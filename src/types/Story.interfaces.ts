@@ -7,6 +7,16 @@ export interface Story {
   title: string;
   type: "story";
   url: string;
+  time: number;
+}
+
+export interface StoryProps {
+  storyID: number;
+  setShowStoryDetails: Story;
+}
+
+export interface StoryHeaderProps {
+  story: Story;
 }
 
 export interface StoryID {
@@ -14,5 +24,15 @@ export interface StoryID {
 }
 
 export interface StoryIDs {
-  storyIDs: number[]
+  storyIDs: StoryID[];
+}
+
+export interface StoryListProps {
+  fetchingFunction: ;
+  setShowStoryDetails: ;
+}
+
+export interface StoryDetailsProps {
+  showStoryDetails: S;
+  setShowStoryDetails: ;
 }

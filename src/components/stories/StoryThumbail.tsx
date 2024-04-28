@@ -1,4 +1,8 @@
-const StoryThumbnail = ({ story }) => {
+import React from "react";
+
+import { StoryHeaderProps } from "../../types/Story.interfaces";
+
+const StoryThumbnail: React.FC<StoryHeaderProps> = ({ story }) => {
   return (
     <>
       <a href={story.url} target="_blank" rel="noopener noreferrer">

@@ -1,9 +1,13 @@
+import React from "react";
+
 import CommentList from "../comments/CommentList";
 import StoryHeader from "./StoryHeader";
 import StoryBody from "./StoryBody";
 import StoryFooter from "./StoryFooter";
 
-const StoryDetails = ({ showStoryDetails, setShowStoryDetails }) => {
+import { StoryDetailsProps } from "../../types/Story.interfaces";
+
+const StoryDetails: React.FC<StoryDetailsProps> = ({ showStoryDetails, setShowStoryDetails }) => {
   return (
     <>
       {showStoryDetails && (

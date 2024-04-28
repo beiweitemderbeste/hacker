@@ -1,6 +1,10 @@
+import React from "react";
+
 import { convertUnixTime, shortURL } from "../../utils/utils";
 
-const StoryHeader = ({ story }) => {
+import { StoryHeaderProps } from "../../types/Story.interfaces"
+
+const StoryHeader: React.FC<StoryHeaderProps> = ({ story }) => {
   const time = convertUnixTime(story.time);
 
   return (

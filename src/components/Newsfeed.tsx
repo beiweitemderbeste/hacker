@@ -1,15 +1,17 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { fetchTop10BestStoryIDs } from "../utils/utils";
 import { fetchTop10TopStoryIDs } from "../utils/utils";
 import { fetchTop10NewStoryIDs } from "../utils/utils";
 
-import SortingBar from "./SortingBar.tsx";
+import SortingBar from "./SortingBar";
 import StoryList from "./stories/StoryList"
 import StoryDetails from "./stories/StoryDetails";
 
-const Newsfeed = () => {
-  const [sorting, setSorting] = useState("top");
+import { SortingOptions } from "../types/Sorting.interfaces";
+
+const Newsfeed: React.FC = () => {
+  const [sorting, setSorting] = useState<SortingOptions>("top");
   const [fetchingFunction, setFetchingFunction] = useState(() =>
     fetchTop10TopStoryIDs()
   );

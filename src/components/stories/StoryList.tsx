@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import Story from "./Story";
 import BackToTopButton from "../BackToTopButton";
 
-const StoryList = ({ fetchingFunction, setShowStoryDetails }) => {
+const StoryList: React.FC<> = ({ fetchingFunction, setShowStoryDetails }) => {
   const [storyIDs, setStorIDs] = useState([]);
 
   useEffect(() => {
