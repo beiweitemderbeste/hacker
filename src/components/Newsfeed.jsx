@@ -4,7 +4,7 @@ import { fetchTop10BestStoryIDs } from "../utils/utils";
 import { fetchTop10TopStoryIDs } from "../utils/utils";
 import { fetchTop10NewStoryIDs } from "../utils/utils";
 
-import SortingBar from "./SortingBar";
+import Navigation from "./Navigation";
 import StoryList from "./Story/StoryList";
 import StoryDetails from "./Story/StoryDetails";
 
@@ -27,7 +27,7 @@ const Newsfeed = () => {
 
   return (
     <>
-      <SortingBar sorting={sorting} setSorting={setSorting} />
+      <Navigation sorting={sorting} setSorting={setSorting} />
       <StoryList
         fetchingFunction={fetchingFunction}
         setShowStoryDetails={setShowStoryDetails}

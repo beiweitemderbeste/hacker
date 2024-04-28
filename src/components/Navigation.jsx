@@ -1,11 +1,11 @@
 import DropDownMenu from "./Dropdown/DropDownMenu";
 
-const SortingBar = ({ sorting, setSorting }) => {
+const Navigation = ({ sorting, setSorting }) => {
   return (
-    <div className="bg-gray-800 text-white">
+    <nav className="bg-gray-800">
       <DropDownMenu sorting={sorting} setSorting={setSorting} />
-    </div>
+    </nav>
   );
 };
 
-export default SortingBar;
+export default Navigation;
