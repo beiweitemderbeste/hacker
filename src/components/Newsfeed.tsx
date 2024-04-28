@@ -8,10 +8,10 @@ import SortingBar from "./SortingBar";
 import StoryList from "./stories/StoryList"
 import StoryDetails from "./stories/StoryDetails";
 
-import { SortingOptions } from "../types/Sorting.interfaces";
+import { SortingOptions, SortingState } from "../types/Sorting.interfaces";
 
 const Newsfeed: React.FC = () => {
-  const [sorting, setSorting] = useState<SortingOptions>("top");
+  const [sorting, setSorting] = useState<SortingState>("top");
   const [fetchingFunction, setFetchingFunction] = useState(() =>
     fetchTop10TopStoryIDs()
   );
