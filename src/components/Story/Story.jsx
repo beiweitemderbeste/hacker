@@ -5,9 +5,11 @@ import { fetchSingleStory } from "../../utils/utils";
 import StoryHeader from "./StoryHeader";
 import StoryBody from "./StoryBody";
 import StoryFooter from "./StoryFooter";
+import StoryModal from "./StoryModal";
 
-const Story = ({ storyID, setShowStoryDetails }) => {
+const Story = ({ storyID }) => {
   const [storyObject, setStoryObject] = useState(null);
+  const [showStoryModal, setShowStoryModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,8 +24,9 @@ const Story = ({ storyID, setShowStoryDetails }) => {
   }, [storyID]);
 
   return (
+    <>
     <li
-      onClick={() => setShowStoryDetails(storyObject)}
+      onClick={() => setShowStoryModal(true)}
       className="border-b border-gray-700 p-4"
     >
       {storyObject ? (
@@ -31,11 +34,18 @@ const Story = ({ storyID, setShowStoryDetails }) => {
           <StoryHeader story={storyObject} />
           <StoryBody story={storyObject} />
           <StoryFooter story={storyObject} />
+          
         </>
       ) : (
         <p className="text-gray-400">Loading...</p>
       )}
     </li>
+    <StoryModal
+    showStoryModal={showStoryModal}
+    setShowStoryModal={setShowStoryModal}
+    storyObject={storyObject}
+  />
+  </>
   );
 };
 

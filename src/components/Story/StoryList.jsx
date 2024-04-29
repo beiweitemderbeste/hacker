@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Story from "./Story";
 import BackToTopButton from "../BackToTopButton";
 
-const StoryList = ({ fetchingFunction, setShowStoryDetails }) => {
+const StoryList = ({ fetchingFunction }) => {
   const [storyIDs, setStoryIDs] = useState([]);
 
   useEffect(() => {
@@ -23,11 +23,7 @@ const StoryList = ({ fetchingFunction, setShowStoryDetails }) => {
     <div className="container mx-auto bg-gray-900">
       <ul className="list-none m-0 p-0">
         {storyIDs.map((storyID) => (
-          <Story
-            key={storyID}
-            storyID={storyID}
-            setShowStoryDetails={setShowStoryDetails}
-          />
+          <Story key={storyID} storyID={storyID} />
         ))}
       </ul>
       <BackToTopButton />
