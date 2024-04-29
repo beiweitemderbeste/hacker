@@ -1,13 +1,25 @@
-import SortingModalButton from "./SortingModalButton"
+import SortingModalButton from "./SortingModalButton";
 
 const SortingModalBody = ({ setSortingSelection, setOpenSortingModal }) => {
   return (
-    <>
-    <SortingModalButton setSortingSelection={setSortingSelection} setOpenSortingModal={setOpenSortingModal} />
-    <SortingModalButton setSortingSelection={setSortingSelection} setOpenSortingModal={setOpenSortingModal} />
-    <SortingModalButton setSortingSelection={setSortingSelection} setOpenSortingModal={setOpenSortingModal} />
-    </>
-  )
-}
+    <div className="flex flex-col">
+      <SortingModalButton
+        text="new"
+        setSortingSelection={setSortingSelection}
+        setOpenSortingModal={setOpenSortingModal}
+      />
+      <SortingModalButton
+        text="best"
+        setSortingSelection={setSortingSelection}
+        setOpenSortingModal={setOpenSortingModal}
+      />
+      <SortingModalButton
+        text="top"
+        setSortingSelection={setSortingSelection}
+        setOpenSortingModal={setOpenSortingModal}
+      />
+    </div>
+  );
+};
 
-export default SortingModalBody
+export default SortingModalBody;
