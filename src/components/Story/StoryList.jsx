@@ -4,13 +4,13 @@ import Story from "./Story";
 import BackToTopButton from "../BackToTopButton";
 
 const StoryList = ({ fetchingFunction, setShowStoryDetails }) => {
-  const [storyIDs, setStorIDs] = useState([]);
+  const [storyIDs, setStoryIDs] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const stories = await fetchingFunction;
-        setStorIDs(stories);
+        setStoryIDs(stories);
       } catch (error) {
         console.error("Error fetching stories:", error);
       }
