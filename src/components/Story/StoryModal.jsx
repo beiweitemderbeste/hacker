@@ -14,9 +14,9 @@ const StoryModal = ({ storyObject, showStoryModal, setShowStoryModal }) => {
           >
             close
           </button>
-          <StoryHeader story={storyObject} />
-          <StoryBody story={storyObject} />
-          <StoryFooter story={storyObject} />
+          <StoryHeader storyObject={storyObject} />
+          <StoryBody storyObject={storyObject} />
+          <StoryFooter storyObject={storyObject} />
           {storyObject.kids && <CommentList commentIDs={storyObject.kids} />}
         </div>
       )}
