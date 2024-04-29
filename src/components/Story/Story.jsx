@@ -31,9 +31,9 @@ const Story = ({ storyID }) => {
     >
       {storyObject ? (
         <>
-          <StoryHeader story={storyObject} />
-          <StoryBody story={storyObject} />
-          <StoryFooter story={storyObject} />
+          <StoryHeader storyObject={storyObject} />
+          <StoryBody storyObject={storyObject} />
+          <StoryFooter storyObject={storyObject} />
           
         </>
       ) : (
