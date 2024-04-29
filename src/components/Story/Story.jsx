@@ -7,13 +7,13 @@ import StoryBody from "./StoryBody";
 import StoryFooter from "./StoryFooter";
 
 const Story = ({ storyID, setShowStoryDetails }) => {
-  const [story, setStory] = useState(null);
+  const [storyObject, setStoryObject] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const singleStory = await fetchSingleStory(storyID);
-        setStory(singleStory);
+        const story = await fetchSingleStory(storyID);
+        setStoryObject(story);
       } catch (error) {
         console.error("Error fetching single story: ", error);
       }
@@ -23,14 +23,14 @@ const Story = ({ storyID, setShowStoryDetails }) => {
 
   return (
     <li
-      onClick={() => setShowStoryDetails(story)}
+      onClick={() => setShowStoryDetails(storyObject)}
       className="border-b border-gray-700 p-4"
     >
-      {story ? (
+      {storyObject ? (
         <>
-          <StoryHeader story={story} />
-          <StoryBody story={story} />
-          <StoryFooter story={story} />
+          <StoryHeader story={storyObject} />
+          <StoryBody story={storyObject} />
+          <StoryFooter story={storyObject} />
         </>
       ) : (
         <p className="text-gray-400">Loading...</p>
