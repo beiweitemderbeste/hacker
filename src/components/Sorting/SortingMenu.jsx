@@ -12,7 +12,7 @@ const SortingMenu = ({ sortingSelection, setSortingSelection }) => {
   return (
     <div className="p-3 px-6">
       <button onClick={toggleMenu} className="text-white">{sortingSelection} stories ↓</button>
-      {open && <SortingModal setSortingSelection={setSortingSelection} setOpenSortingModal={setOpenSortingModal} />}
+      {openSortingModal && <SortingModal setSortingSelection={setSortingSelection} setOpenSortingModal={setOpenSortingModal} />}
     </div>
   );
 };
