@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react";
 
+import { fetchTop10BestStoryIDs } from "../../utils/utils";
+import { fetchTop10TopStoryIDs } from "../../utils/utils";
+import { fetchTop10NewStoryIDs } from "../../utils/utils";
+
 import Story from "./Story";
 import BackToTopButton from "../BackToTopButton";
 
-const StoryList = ({ fetchingFunction }) => {
+const StoryList = ({ sortingSelection }) => {
   const [storyIDs, setStoryIDs] = useState([]);
+  const [fetchingFunction, setFetchingFunction] = useState(() =>
+    fetchTop10TopStoryIDs()
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,6 +25,16 @@ const StoryList = ({ fetchingFunction }) => {
 
     fetchData();
   }, [fetchingFunction]);
+
+  useEffect(() => {
+    if (sortingSelection === "new") {
+      setFetchingFunction(() => fetchTop10NewStoryIDs());
+    } else if (sortingSelection === "best") {
+      setFetchingFunction(() => fetchTop10BestStoryIDs());
+    } else {
+      setFetchingFunction(() => fetchTop10TopStoryIDs());
+    }
+  }, [sortingSelection]);
 
   return (
     <div className="container mx-auto bg-gray-900">
