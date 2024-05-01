@@ -12,40 +12,31 @@ const Story = ({ storyID }) => {
   const [showStoryModal, setShowStoryModal] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const story = await fetchSingleStory(storyID);
-        setStoryObject(story);
-      } catch (error) {
-        console.error("Error fetching single story: ", error);
-      }
-    };
-    fetchData();
+    fetchSingleStory(storyID, setStoryObject);
   }, [storyID]);
 
   return (
     <>
-    <li
-      onClick={() => setShowStoryModal(true)}
-      className="border-b border-gray-700 p-4"
-    >
-      {storyObject ? (
-        <>
-          <StoryHeader storyObject={storyObject} />
-          <StoryBody storyObject={storyObject} />
-          <StoryFooter storyObject={storyObject} />
-          
-        </>
-      ) : (
-        <p className="text-gray-400">Loading...</p>
-      )}
-    </li>
-    <StoryModal
-    showStoryModal={showStoryModal}
-    setShowStoryModal={setShowStoryModal}
-    storyObject={storyObject}
-  />
-  </>
+      <li
+        onClick={() => setShowStoryModal(true)}
+        className="border-b border-gray-700 p-4"
+      >
+        {storyObject ? (
+          <>
+            <StoryHeader storyObject={storyObject} />
+            <StoryBody storyObject={storyObject} />
+            <StoryFooter storyObject={storyObject} />
+          </>
+        ) : (
+          <p className="text-gray-400">Loading...</p>
+        )}
+      </li>
+      <StoryModal
+        showStoryModal={showStoryModal}
+        setShowStoryModal={setShowStoryModal}
+        storyObject={storyObject}
+      />
+    </>
   );
 };
 

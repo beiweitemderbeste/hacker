@@ -23,12 +23,12 @@ export const fetchAllStoryIDs = async (sorting, setStoryIDs) => {
   }
 };
 
-export const fetchSingleStory = async (storyID) => {
+export const fetchSingleStory = async (storyID, setStoryObject) => {
   const url = BASE_URL + `item/` + `${storyID}` + ".json?print=pretty";
   try {
     const response = await fetch(url);
     const data = await response.json();
-    return data;
+    setStoryObject(data);
   } catch (error) {
     console.error("Error fetching single story: ", error);
   }
