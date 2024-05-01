@@ -2,12 +2,12 @@ import StoryAuthor from "./StoryAuthor";
 import StoryTime from "./StoryTime";
 import StoryLink from "./StoryLink";
 
-const StoryHeader = ({ storyObject }) => {
+const StoryHeader = ({ author, time, link }) => {
   return (
     <div className="flex">
-      <StoryAuthor author={storyObject.by} />
-      <StoryTime time={storyObject.time} />
-      <StoryLink link={storyObject.url} />
+      <StoryAuthor author={author} />
+      <StoryTime time={time} />
+      <StoryLink link={link} />
     </div>
   );
 };

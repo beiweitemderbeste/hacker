@@ -24,7 +24,11 @@ const Story = ({ storyID }) => {
       <li onClick={handleStoryClick} className="border-b border-gray-700 p-4">
         {storyObject ? (
           <>
-            <StoryHeader storyObject={storyObject} />
+            <StoryHeader
+              author={storyObject.by}
+              time={storyObject.time}
+              link={storyObject.url}
+            />
             <StoryBody title={storyObject.title} link={storyObject.url} />
             <StoryFooter storyObject={storyObject} />
           </>
