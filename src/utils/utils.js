@@ -1,86 +1,32 @@
-export const fetchTop10TopStoryIDs = async () => {
+const BASE_URL = "https://hacker-news.firebaseio.com/v0/";
+
+export const fetchLast10StoryIDs = async (sorting, setStoryIDs) => {
+  const url = BASE_URL + `${sorting}` + "stories.json?print=pretty";
   try {
-    const response = await fetch(
-      "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"
-    );
+    const response = await fetch(url);
     const data = await response.json();
-    const top10StoryIDs = data.slice(0, 10);
-    return top10StoryIDs;
+    const storyIDs = data.slice(0, 10);
+    setStoryIDs(storyIDs);
   } catch (error) {
-    console.error("Error fetching top10 topstory ids: ", error);
+    console.error(`error fetching last ten ${sorting} stories: `, error);
   }
 };
 
-export const fetchAllTopStoryIDs = async () => {
+export const fetchAllStoryIDs = async (sorting, setStoryIDs) => {
+  const url = BASE_URL + `${sorting}` + "stories.json?print=pretty";
   try {
-    const response = await fetch(
-      "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"
-    );
+    const response = await fetch(url);
     const data = await response.json();
-    const allTopStoryIDs = data;
-    return allTopStoryIDs;
+    setStoryIDs(data);
   } catch (error) {
-    console.error("Error fetchin all topstories: ", error);
-  }
-};
-
-export const fetchTop10BestStoryIDs = async () => {
-  try {
-    const response = await fetch(
-      "https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty"
-    );
-    const data = await response.json();
-    const top10StoryIDs = data.slice(0, 10);
-    return top10StoryIDs;
-  } catch (error) {
-    console.error("Error fetching top10 beststory ids: ", error);
-  }
-};
-
-export const fetchAllBestStoryIDs = async () => {
-  try {
-    const response = await fetch(
-      "https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty"
-    );
-    const data = await response.json();
-    const allBestStoryIDs = data;
-    return allBestStoryIDs;
-  } catch (error) {
-    console.error("Error fetchin all best stories: ", error);
-  }
-};
-
-export const fetchTop10NewStoryIDs = async () => {
-  try {
-    const response = await fetch(
-      "https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty"
-    );
-    const data = await response.json();
-    const top10StoryIDs = data.slice(0, 10);
-    return top10StoryIDs;
-  } catch (error) {
-    console.error("Error fetching top10 newstory ids: ", error);
-  }
-};
-
-export const fetchAllNewStoryIDs = async () => {
-  try {
-    const response = await fetch(
-      "https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty"
-    );
-    const data = await response.json();
-    const allNewStoryIDs = data;
-    return allNewStoryIDs;
-  } catch (error) {
-    console.error("Error fetchin all new stories: ", error);
+    console.error(`error fetching ${sorting} stories: `, error);
   }
 };
 
 export const fetchSingleStory = async (storyID) => {
+  const url = BASE_URL + `item/` + `${storyID}` + ".json?print=pretty";
   try {
-    const response = await fetch(
-      `https://hacker-news.firebaseio.com/v0/item/${storyID}.json?print=pretty`
-    );
+    const response = await fetch(url);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -89,10 +35,9 @@ export const fetchSingleStory = async (storyID) => {
 };
 
 export const fetchSingleComment = async (commentID) => {
+  const url = BASE_URL + `item/` + `${commentID}` + ".json?print=pretty";
   try {
-    const response = await fetch(
-      `https://hacker-news.firebaseio.com/v0/item/${commentID}.json?print=pretty`
-    );
+    const response = await fetch(url);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -111,7 +56,7 @@ export const shortURL = (link) => {
 };
 
 export const decodeHTMLEntities = (html) => {
-  const textarea = document.createElement('textarea');
+  const textarea = document.createElement("textarea");
   textarea.innerHTML = html;
   return textarea.value;
 };
