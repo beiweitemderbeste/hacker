@@ -6,9 +6,13 @@ import StoryFooter from "./StoryFooter";
 const StoryModalBody = ({ storyObject }) => {
   return (
     <div>
-      <StoryHeader storyObject={storyObject} />
-      <StoryBody storyObject={storyObject} />
-      <StoryFooter storyObject={storyObject} />
+      <StoryHeader
+        author={storyObject.by}
+        time={storyObject.time}
+        link={storyObject.url}
+      />
+      <StoryBody title={storyObject.title} link={storyObject.url} />
+      <StoryFooter storyObject={storyObject} score={storyObject.score} />
       {storyObject.kids && <CommentList commentIDs={storyObject.kids} />}
     </div>
   );

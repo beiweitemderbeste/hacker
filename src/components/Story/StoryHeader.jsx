@@ -7,7 +7,7 @@ const StoryHeader = ({ author, time, link }) => {
     <div className="flex">
       <StoryAuthor author={author} />
       <StoryTime time={time} />
-      <StoryLink link={link} />
+      {link && <StoryLink link={link} />}
     </div>
   );
 };
