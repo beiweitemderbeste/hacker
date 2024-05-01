@@ -13,14 +13,12 @@ const StoryList = ({ sortingSelection }) => {
   }, [sortingSelection]);
 
   return (
-    <div className="container mx-auto bg-gray-900">
-      <ul className="list-none m-0 p-0">
-        {storyIDs.map((storyID) => (
-          <Story key={storyID} storyID={storyID} />
-        ))}
-      </ul>
+    <ul className="list-none m-0 p-0 bg-gray-900">
+      {storyIDs.map((storyID) => (
+        <Story key={storyID} storyID={storyID} />
+      ))}
       <BackToTopButton />
-    </div>
+    </ul>
   );
 };
 
