@@ -25,7 +25,7 @@ const Story = ({ storyID }) => {
         {storyObject ? (
           <>
             <StoryHeader storyObject={storyObject} />
-            <StoryBody storyObject={storyObject} />
+            <StoryBody title={storyObject.title} link={storyObject.url} />
             <StoryFooter storyObject={storyObject} />
           </>
         ) : (

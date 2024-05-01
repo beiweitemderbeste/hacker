@@ -1,11 +1,11 @@
 import StoryTitle from "./StoryTitle";
 import StoryThumbnail from "./StoryThumbail";
 
-const StoryBody = ({ storyObject }) => {
+const StoryBody = ({ title, link }) => {
   return (
     <div className="bg-gray-900 py-4 flex">
-      <StoryTitle title={storyObject.title} />
-      <StoryThumbnail className="flex-1" storyObject={storyObject} />
+      <StoryTitle title={title} />
+      <StoryThumbnail className="flex-1" link={link} />
     </div>
   );
 };
