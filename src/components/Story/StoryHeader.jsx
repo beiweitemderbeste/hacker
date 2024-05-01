@@ -2,6 +2,7 @@ import { convertUnixTime, shortURL } from "../../utils/utils";
 
 const StoryHeader = ({ storyObject }) => {
   const formattedTime = convertUnixTime(storyObject.time);
+  const formattedURL = shortURL(storyObject.url)
 
   return (
     <div className="flex">
@@ -9,7 +10,7 @@ const StoryHeader = ({ storyObject }) => {
       <p className="text-gray-500 mr-1"> ⚬ </p>
       <p className="text-gray-500 mr-1">{formattedTime}</p>
       <p className="text-gray-500 mr-1"> ⚬ </p>
-      {storyObject.url && <p className="text-gray-500">{shortURL(storyObject.url)}</p>}
+      {storyObject.url && <p className="text-gray-500">{formattedURL}</p>}
     </div>
   );
 };
