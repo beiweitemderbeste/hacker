@@ -15,10 +15,14 @@ const Story = ({ storyID }) => {
     fetchSingleStory(storyID, setStoryObject);
   }, [storyID]);
 
+  const handleStoryClick = () => {
+    setShowStoryModal(true);
+  };
+
   return (
     <>
       <li
-        onClick={() => setShowStoryModal(true)}
+        onClick={handleStoryClick}
         className="border-b border-gray-700 p-4"
       >
         {storyObject ? (
