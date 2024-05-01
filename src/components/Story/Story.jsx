@@ -21,10 +21,7 @@ const Story = ({ storyID }) => {
 
   return (
     <>
-      <li
-        onClick={handleStoryClick}
-        className="border-b border-gray-700 p-4"
-      >
+      <li onClick={handleStoryClick} className="border-b border-gray-700 p-4">
         {storyObject ? (
           <>
             <StoryHeader storyObject={storyObject} />
