@@ -30,7 +30,7 @@ const Story = ({ storyID }) => {
               link={storyObject.url}
             />
             <StoryBody title={storyObject.title} link={storyObject.url} />
-            <StoryFooter commentCount={storyObject.kids.length} score={storyObject.score} />
+            <StoryFooter commentCount={storyObject.kids ? storyObject.kids.length : 0} score={storyObject.score} />
           </>
         ) : (
           <p className="text-gray-400">Loading...</p>

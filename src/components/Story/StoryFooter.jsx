@@ -1,12 +1,11 @@
 import StoryScore from "./StoryScore";
-import StoryComments from "./StoryComments"
+import StoryCommentsCounter from "./StoryCommentsCounter"
 
 const StoryFooter = ({ score, commentCount }) => {
   return (
     <div className="flex items-center space-x-4">
       <StoryScore score={score} />
-      <StoryComments commentCount={commentCount} />
-      
+      <StoryCommentsCounter commentCount={commentCount} />
     </div>
   );
 };
