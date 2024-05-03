@@ -12,6 +12,7 @@ todos:
 - [x] sort components
 - [ ] refactor components into smaller components
 - [ ] add typescript
+- [ ] add loading placeholder component
 - [ ] write function to load more items based on the sorting status
 - [ ] write function to convert the time
 - [ ] change header based on choice of stories
