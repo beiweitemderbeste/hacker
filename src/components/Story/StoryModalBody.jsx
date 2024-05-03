@@ -12,7 +12,7 @@ const StoryModalBody = ({ storyObject }) => {
         link={storyObject.url}
       />
       <StoryBody title={storyObject.title} link={storyObject.url} />
-      <StoryFooter commentCount={storyObject.kids.length} score={storyObject.score} />
+      <StoryFooter commentCount={storyObject.kids ? storyObject.kids.length : 0} score={storyObject.score} />
       {storyObject.kids && <CommentList commentIDs={storyObject.kids} />}
     </div>
   );

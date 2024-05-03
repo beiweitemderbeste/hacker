@@ -7,13 +7,13 @@ import CommentBody from "./CommentBody";
 import CommentList from "./CommentList";
 
 const Comment = ({ commentID }) => {
-  const [comment, setComment] = useState();
+  const [commentObject, setCommentObject] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const singleComment = await fetchSingleComment(commentID);
-        setComment(singleComment);
+        setCommentObject(singleComment);
       } catch (error) {
         console.error("Error fetching single comment: ", error);
       }
@@ -23,11 +23,11 @@ const Comment = ({ commentID }) => {
 
   return (
     <li className="p-4 mb-4">
-      {comment ? (
+      {commentObject ? (
         <>
-          <CommentHeader comment={comment} />
-          <CommentBody comment={comment} />
-          {comment.kids && <CommentList commentIDs={comment.kids} />}
+          <CommentHeader commentObject={commentObject} />
+          <CommentBody commentObject={commentObject} />
+          {commentObject.kids && <CommentList commentObject={commentObject.kids} />}
         </>
       ) : (
         <p className="text-gray-400">Loading...</p>
