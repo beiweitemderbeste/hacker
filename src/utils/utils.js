@@ -34,12 +34,12 @@ export const fetchSingleStory = async (storyID, setStoryObject) => {
   }
 };
 
-export const fetchSingleComment = async (commentID) => {
+export const fetchSingleComment = async (commentID, setCommentObject) => {
   const url = BASE_URL + `item/` + `${commentID}` + ".json?print=pretty";
   try {
     const response = await fetch(url);
     const data = await response.json();
-    return data;
+    setCommentObject(data);
   } catch (error) {
     console.error("Error fetching single comment: ", error);
   }
