@@ -1,5 +1,5 @@
 import CommentAuthor from "./CommentAuthor.tsx";
-import CommentTime from "./CommentTime";
+import CommentTime from "./CommentTime.tsx";
 
 const CommentHeader = ({ author, time }) => {
   return (
