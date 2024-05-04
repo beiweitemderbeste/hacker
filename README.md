@@ -10,7 +10,7 @@ todos:
 - [x] add back to top of page-button
 - [x] decode comments
 - [x] sort components
-- [ ] refactor components into smaller components
+- [x] refactor components into smaller components
 - [ ] add typescript
 - [ ] add loading placeholder component
 - [ ] write function to load more items based on the sorting status
