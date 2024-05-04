@@ -1,9 +1,11 @@
 import { decodeHTMLEntities } from "../../utils/utils";
 
-const CommentBody = ({ commentObject }) => {
+const CommentBody = ({ text }) => {
+  const decodedText = decodeHTMLEntities(text);
+
   return (
     <div className="text-white px-4">
-      <p>{decodeHTMLEntities(commentObject.text)}</p>
+      <p>{decodedText}</p>
     </div>
   );
 };

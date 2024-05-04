@@ -1,9 +1,11 @@
-const CommentHeader = ({ commentObject }) => {
+import CommentAuthor from "./CommentAuthor";
+import CommentTime from "./CommentTime";
+
+const CommentHeader = ({ author, time }) => {
   return (
     <div className="flex px-4">
-      <p className="text-gray-400 font-medium mr-2">{commentObject.by}</p>
-      <p className="text-gray-500 mr-1"> ⚬ </p>
-      <p className="text-gray-500">{commentObject.time}</p>
+      <CommentAuthor author={author} />
+      <CommentTime time={time} />
     </div>
   );
 };

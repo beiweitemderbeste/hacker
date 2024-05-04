@@ -17,8 +17,8 @@ const Comment = ({ commentID }) => {
     <li className="p-4 mb-4">
       {commentObject ? (
         <>
-          <CommentHeader commentObject={commentObject} />
-          <CommentBody commentObject={commentObject} />
+          <CommentHeader author={commentObject.by} time={commentObject.time} />
+          <CommentBody text={commentObject.text} />
           {commentObject.kids && <CommentList commentIDs={commentObject.kids} />}
         </>
       ) : (
