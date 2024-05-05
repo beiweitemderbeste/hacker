@@ -1,6 +1,10 @@
-import { decodeHTMLEntities } from "../../utils/utils";
+import { decodeHTMLEntities } from "../../utils/utilities";
 
-const CommentBody = ({ text }) => {
+interface CommentBodyProps {
+  text: string
+}
+
+const CommentBody: React.FC<CommentBodyProps> = ({ text }) => {
   const decodedText = decodeHTMLEntities(text);
 
   return (
