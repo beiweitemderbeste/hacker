@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 
-import { fetchLast10StoryIDs } from "../../utils/utils";
+import { fetchLast10StoryIDs } from "../../utils/utilities";
 
 import StoryListItem from "./StoryListItem";
 import BackToTopButton from "../BackToTopButton";
 
-const StoryList = ({ sortingSelection }) => {
-  const [storyIDs, setStoryIDs] = useState([]);
+interface StoryListProps {
+  sortingSelection: "top" | "best" | "new";
+}
+
+const StoryList: React.FC<StoryListProps> = ({ sortingSelection }) => {
+  const [storyIDs, setStoryIDs] = useState<number[]>([]);
 
   useEffect(() => {
     fetchLast10StoryIDs(sortingSelection, setStoryIDs);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-const BackToTopButton = () => {
-  const [showButton, setShowButton] = useState(false);
+const BackToTopButton: React.FC = () => {
+  const [showButton, setShowButton] = useState<boolean>(false);
 
   useEffect(() => {
     const checkScrollHeight = () => {

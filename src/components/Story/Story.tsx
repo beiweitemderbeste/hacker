@@ -2,7 +2,21 @@ import StoryHeader from "./StoryHeader";
 import StoryBody from "./StoryBody";
 import StoryFooter from "./StoryFooter";
 
-const Story = ({ storyObject }) => {
+interface StoryProps {
+   storyObject: {
+    by: string;
+    descendants: number;
+    id: number;
+    kids: number[];
+    score: number;
+    time: number;
+    title: string;
+    type: "story";
+    url: string;
+  }
+}
+
+const Story: React.FC<StoryProps> = ({ storyObject }) => {
   return (
     <>
       <StoryHeader

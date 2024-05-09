@@ -1,7 +1,12 @@
 import StoryScore from "./StoryScore";
 import StoryCommentsCounter from "./StoryCommentsCounter"
 
-const StoryFooter = ({ score, commentCount }) => {
+interface StoryFooterProps {
+  score: number;
+  commentCount: number;
+}
+
+const StoryFooter: React.FC<StoryFooterProps> = ({ score, commentCount }) => {
   return (
     <div className="flex items-center space-x-4">
       <StoryScore score={score} />

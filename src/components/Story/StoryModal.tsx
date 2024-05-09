@@ -1,7 +1,23 @@
 import StoryModalButton from "./StoryModalButton";
 import StoryModalBody from "./StoryModalBody";
 
-const StoryModal = ({ storyObject, showStoryModal, setShowStoryModal }) => {
+interface StoryModalProps {
+  storyObject: {
+    by: string;
+    descendants: number;
+    id: number;
+    kids: number[];
+    score: number;
+    time: number;
+    title: string;
+    type: "story";
+    url: string;
+  };
+  showStoryModal: boolean;
+  setShowStoryModal: Function;
+}
+
+const StoryModal: React.FC<StoryModalProps> = ({ storyObject, showStoryModal, setShowStoryModal }) => {
   return (
     <>
       {showStoryModal && (

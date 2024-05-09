@@ -1,12 +1,28 @@
 import { useState, useEffect } from "react";
 
-import { fetchSingleStory } from "../../utils/utils";
+import { fetchSingleStory } from "../../utils/utilities";
 
 import Story from "./Story";
 import StoryModal from "./StoryModal";
 
-const StoryListItem = ({ storyID }) => {
-  const [storyObject, setStoryObject] = useState(null);
+interface StoryListItemProps {
+  storyID: number;
+}
+
+interface Story {
+  by: string;
+  descendants: number;
+  id: number;
+  kids: number[];
+  score: number;
+  time: number;
+  title: string;
+  type: "story";
+  url: string;
+}
+
+const StoryListItem: React.FC<StoryListItemProps> = ({ storyID }) => {
+  const [storyObject, setStoryObject] = useState<Story | null>(null);
   const [showStoryModal, setShowStoryModal] = useState(false);
 
   useEffect(() => {
@@ -29,10 +45,10 @@ const StoryListItem = ({ storyID }) => {
       <StoryModal
         showStoryModal={showStoryModal}
         setShowStoryModal={setShowStoryModal}
-        storyObject={storyObject}
+        storyObject={storyObject as Story}
       />
     </>
   );
-}
+};
 
-export default StoryListItem
+export default StoryListItem;

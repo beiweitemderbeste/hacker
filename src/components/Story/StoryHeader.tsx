@@ -2,7 +2,13 @@ import StoryAuthor from "./StoryAuthor";
 import StoryTime from "./StoryTime";
 import StoryLink from "./StoryLink";
 
-const StoryHeader = ({ author, time, link }) => {
+interface StoryHeaderProps {
+  author: string;
+  time: number;
+  link: string;
+}
+
+const StoryHeader: React.FC<StoryHeaderProps> = ({ author, time, link }) => {
   return (
     <div className="flex">
       <StoryAuthor author={author} />

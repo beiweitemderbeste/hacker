@@ -1,6 +1,10 @@
-import { shortURL } from "../../utils/utils";
+import { shortURL } from "../../utils/utilities";
 
-const StoryLink = ({ link }) => {
+interface StoryLinkProps {
+  link: string;
+}
+
+const StoryLink: React.FC<StoryLinkProps> = ({ link }) => {
   if (!link) return null;
   const formattedLink = shortURL(link);
 
