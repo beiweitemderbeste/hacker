@@ -1,6 +1,11 @@
 import SortingModalButton from "./SortingModalButton";
 
-const SortingModalBody = ({ setSortingSelection, setOpenSortingModal }) => {
+interface SortingModalBodyProps {
+  setSortingSelection: Function;
+  setOpenSortingModal: Function;
+}
+
+const SortingModalBody: React.FC<SortingModalBodyProps> = ({ setSortingSelection, setOpenSortingModal }) => {
   return (
     <div className="flex flex-col">
       <SortingModalButton
