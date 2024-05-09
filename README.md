@@ -11,7 +11,7 @@ todos:
 - [x] decode comments
 - [x] sort components
 - [x] refactor components into smaller components
-- [ ] add typescript
+- [x] add typescript
 - [ ] add loading placeholder component
 - [ ] write function to load more items based on the sorting status
 - [ ] write function to convert the time
