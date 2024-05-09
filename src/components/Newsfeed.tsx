@@ -3,8 +3,8 @@ import { useState } from "react";
 import Navigation from "./Navigation";
 import StoryList from "./Story/StoryList";
 
-const Newsfeed = () => {
-  const [sortingSelection, setSortingSelection] = useState("top");
+const Newsfeed: React.FC = () => {
+  const [sortingSelection, setSortingSelection] = useState<"top" | "best" | "new">("top");
 
   return (
     <>
