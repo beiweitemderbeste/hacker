@@ -3,7 +3,7 @@ import StoryBody from "./StoryBody";
 import StoryFooter from "./StoryFooter";
 
 interface StoryProps {
-   storyObject: {
+  storyObject: {
     by: string;
     descendants: number;
     id: number;
@@ -13,7 +13,7 @@ interface StoryProps {
     title: string;
     type: "story";
     url: string;
-  }
+  };
 }
 
 const Story: React.FC<StoryProps> = ({ storyObject }) => {

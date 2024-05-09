@@ -1,7 +1,7 @@
 import { decodeHTMLEntities } from "../../utils/utilities";
 
 interface CommentBodyProps {
-  text: string
+  text: string;
 }
 
 const CommentBody: React.FC<CommentBodyProps> = ({ text }) => {

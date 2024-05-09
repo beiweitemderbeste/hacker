@@ -1,6 +1,9 @@
 const BASE_URL: string = "https://hacker-news.firebaseio.com/v0/";
 
-export const fetchLast10StoryIDs = async (sorting: "top" | "best" | "new", setStoryIDs: Function): Promise<void> => {
+export const fetchLast10StoryIDs = async (
+  sorting: "top" | "best" | "new",
+  setStoryIDs: Function
+): Promise<void> => {
   const url = BASE_URL + `${sorting}` + "stories.json?print=pretty";
   try {
     const response = await fetch(url);
@@ -23,7 +26,10 @@ interface Story {
   url: string;
 }
 
-export const fetchSingleStory = async (storyID: number, setStoryObject: Function): Promise<void> => {
+export const fetchSingleStory = async (
+  storyID: number,
+  setStoryObject: Function
+): Promise<void> => {
   const url = BASE_URL + `item/` + `${storyID}` + ".json?print=pretty";
   try {
     const response = await fetch(url);

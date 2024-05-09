@@ -5,7 +5,10 @@ interface SortingModalBodyProps {
   setOpenSortingModal: Function;
 }
 
-const SortingModalBody: React.FC<SortingModalBodyProps> = ({ setSortingSelection, setOpenSortingModal }) => {
+const SortingModalBody: React.FC<SortingModalBodyProps> = ({
+  setSortingSelection,
+  setOpenSortingModal,
+}) => {
   return (
     <div className="flex flex-col">
       <SortingModalButton

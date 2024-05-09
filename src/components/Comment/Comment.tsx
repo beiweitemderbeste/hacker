@@ -33,7 +33,9 @@ const Comment: React.FC<CommentProps> = ({ commentID }) => {
         <>
           <CommentHeader author={commentObject.by} time={commentObject.time} />
           <CommentBody text={commentObject.text} />
-          {commentObject.kids && <CommentList commentIDs={commentObject.kids} />}
+          {commentObject.kids && (
+            <CommentList commentIDs={commentObject.kids} />
+          )}
         </>
       ) : (
         <p className="text-gray-400">Loading...</p>

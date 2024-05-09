@@ -4,9 +4,9 @@ interface StoryThumbnailProps {
 
 const StoryThumbnail: React.FC<StoryThumbnailProps> = ({ link }) => {
   return (
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <img src="https://placehold.co/120x80" width="120" height="80" />
-      </a>
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <img src="https://placehold.co/120x80" width="120" height="80" />
+    </a>
   );
 };
 

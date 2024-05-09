@@ -1,4 +1,4 @@
-import HeaderTitle from  "./HeaderTitle"
+import HeaderTitle from "./HeaderTitle";
 
 const Header: React.FC = () => {
   return (

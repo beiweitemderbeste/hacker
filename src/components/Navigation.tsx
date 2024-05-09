@@ -5,10 +5,16 @@ interface NavigationProps {
   setSortingSelection: Function;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ sortingSelection, setSortingSelection }) => {
+const Navigation: React.FC<NavigationProps> = ({
+  sortingSelection,
+  setSortingSelection,
+}) => {
   return (
     <nav className="bg-gray-800">
-      <SortingMenu sortingSelection={sortingSelection} setSortingSelection={setSortingSelection} />
+      <SortingMenu
+        sortingSelection={sortingSelection}
+        setSortingSelection={setSortingSelection}
+      />
     </nav>
   );
 };

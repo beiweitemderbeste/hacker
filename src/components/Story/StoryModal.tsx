@@ -17,7 +17,11 @@ interface StoryModalProps {
   setShowStoryModal: Function;
 }
 
-const StoryModal: React.FC<StoryModalProps> = ({ storyObject, showStoryModal, setShowStoryModal }) => {
+const StoryModal: React.FC<StoryModalProps> = ({
+  storyObject,
+  showStoryModal,
+  setShowStoryModal,
+}) => {
   return (
     <>
       {showStoryModal && (

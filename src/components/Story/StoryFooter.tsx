@@ -1,5 +1,5 @@
 import StoryScore from "./StoryScore";
-import StoryCommentsCounter from "./StoryCommentsCounter"
+import StoryCommentsCounter from "./StoryCommentsCounter";
 
 interface StoryFooterProps {
   score: number;
