@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Newsfeed from "./components/Newsfeed";
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
       <Header />
