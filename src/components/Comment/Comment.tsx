@@ -1,13 +1,27 @@
 import { useState, useEffect } from "react";
 
-import { fetchSingleComment } from "../../utils/utils";
+import { fetchSingleComment } from "../../utils/utilities";
 
-import CommentHeader from "./CommentHeader.tsx";
+import CommentHeader from "./CommentHeader";
 import CommentBody from "./CommentBody";
 import CommentList from "./CommentList";
 
-const Comment = ({ commentID }) => {
-  const [commentObject, setCommentObject] = useState(null);
+interface CommentProps {
+  commentID: number;
+}
+
+interface Comment {
+  by: string;
+  id: number;
+  kids: number[];
+  parent: number;
+  text: string;
+  time: number;
+  type: string;
+}
+
+const Comment: React.FC<CommentProps> = ({ commentID }) => {
+  const [commentObject, setCommentObject] = useState<Comment | null>(null);
 
   useEffect(() => {
     fetchSingleComment(commentID, setCommentObject);
