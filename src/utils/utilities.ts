@@ -64,6 +64,28 @@ export const fetchSingleComment = async (
   }
 };
 
+interface Author {
+  about: string;
+  created: number;
+  id: string;
+  karma: number;
+  submitted: number[];
+}
+
+export const fetchAuthor = async (
+  author: string,
+  setAuthorObject: Function
+): Promise<void> => {
+  const url = BASE_URL + `item/` + `${author}` + ".json?print=pretty";
+  try {
+    const response = await fetch(url);
+    const data: Author = await response.json();
+    setAuthorObject(data);
+  } catch (error) {
+    console.error("Error fetching author data: ", error);
+  }
+};
+
 export const convertUnixTime = (timestamp: number) => {
   const date = timestamp;
   return date;

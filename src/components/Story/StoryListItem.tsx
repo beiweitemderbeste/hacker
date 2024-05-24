@@ -23,7 +23,7 @@ interface Story {
 
 const StoryListItem: React.FC<StoryListItemProps> = ({ storyID }) => {
   const [storyObject, setStoryObject] = useState<Story | null>(null);
-  const [showStoryModal, setShowStoryModal] = useState(false);
+  const [showStoryModal, setShowStoryModal] = useState<boolean>(false);
 
   useEffect(() => {
     fetchSingleStory(storyID, setStoryObject);
